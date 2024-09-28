@@ -1,0 +1,218 @@
+/* site_v3/static/css/styles.css */
+
+@font-face {
+    font-family: 'Dogica';
+    src: url('../fonts/dogica/dogica.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DogicaPixel';
+    src: url('../fonts/dogica/dogicapixel.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DogicaPixelBold';
+    src: url('../fonts/dogica/dogicapixelbold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'DogicaBold';
+    src: url('../fonts/dogica/dogicabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 90%;
+    margin: 70px 10px 10px 50px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(#bbb0d8, #9cc5bf);
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-family: 'DogicaPixelBold', Arial, sans-serif;
+    letter-spacing: -0.1rem;
+    color: rgb(39, 80, 74);
+    text-align: start;
+    padding: 3rem 1rem 0 1rem;
+    cursor: default;
+}
+
+h1 span {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+h1 span:not([data-l33t]):hover {
+    text-transform: lowercase; /* Ensure non-l33t characters transform to lowercase on hover */
+    cursor: default;
+}
+
+h1 span::before {
+    content: attr(data-l33t); /* Content will be set dynamically by JavaScript */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Initially hide the l33t character */
+    pointer-events: none; /* Ensure hover events are still captured by the span */
+}
+
+.container {
+    display: flex;
+    min-width: 600px;
+    max-width: 1200px;
+    min-height: 600px;
+    max-height: 600px;
+    margin: 40px 20px;
+}
+
+.main-content {
+    flex: 3;
+    margin: 15px;
+    padding: 3px;
+    box-shadow: 
+        4px 4px 6px rgba(0, 0, 0, 0.3), /* outer shadow */
+        inset 3px 3px 1px rgba(255, 255, 255, 0.8), inset -2px -2px 1px rgba(100, 100, 100, 0.5);
+}
+
+.main-content h2 {
+    color: #eeeeee;
+    font-size: 18px;
+    font-weight: 100;
+    margin: 0;
+    padding: 5px 5px 5px 15px; /* Adjust padding as needed */
+    background-color: rgb(39, 80, 74);
+    border-radius: 1px 1px 0 0;
+    text-align: start;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Align items to each end of the container */
+    align-items: center; /* Center items vertically */
+}
+
+.reset-button {
+    margin-left: auto; /* Push the button to the right */
+}
+
+.main-content h3 {
+    color: #333;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 1px;
+    padding: 5px 10px;
+    background-color: #ddd;
+    border: 1px solid #999999;
+    text-align: start;
+    box-shadow: inset 2px 2px 1px rgba(255, 255, 255, 0.74);
+}
+
+.h4-container {
+    display: flex; /* Use flexbox to align h4 and h5 horizontally */
+    align-items: center; /* Center align items vertically */
+    border: 1px solid #999999;
+    border-top: none;
+    margin: 1px;
+    padding-left: 4px;
+    box-shadow: inset 2px 2px 1px rgba(255, 255, 255, 0.74);
+    background-color: #ddd;
+}
+
+.h4-container h4 {
+    color: #333;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 1px;
+    padding-right: 5px; /* Adjust padding as needed */
+}
+
+.h4-container h5 {
+    color: #333;
+    font-size: 12px;
+    font-weight: 100;
+    margin: 1px;
+    margin-right: 2px;
+    flex: 1;
+    padding: 5px;
+    background-color: #eeeeee;
+    box-shadow: 
+        inset 1px 1px 2px rgba(0, 0, 0, 0.7), /* Darker shadow on top and left */
+        inset -1px -1px 5px rgba(255, 255, 255, 0.911); /* Lighter shadow on bottom and right */
+}
+
+.main-content p {
+    color: #666;
+    font-size: 16px;
+    margin: 15px;
+}
+
+/* Styles for interactive elements */
+.main-content button {
+    background-color: #dddddd;
+    color: #333;
+    border: none;
+    border-radius: 1px;
+    padding: 2px;
+    margin: -1px;
+    cursor: pointer;
+    width: 22px;
+    height: 22px;
+    font-family: 'DogicaPixel', Arial, Helvetica, sans-serif;
+}
+
+.main-content button:hover {
+    color:rgba(0, 0, 0, 0.8);
+    background-color: #cecece;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+}
+
+.main-content, .sidebar {
+    border-radius: 1.5px;
+    background-color: #dddddd;
+}
+
+.sidebar {
+    flex: 1;
+    padding: 1rem;
+    margin: 15px;
+    margin-top: 30px;
+    max-height: 300px;
+    max-width: 175px;
+    box-shadow:
+        inset 2px 2px 1px rgba(255, 255, 255, 0.8), inset -2px -2px 1px rgba(100, 100, 100, 0.5);
+}
+
+.sidebar button {
+    display: block;
+    margin-bottom: 0.75rem;
+    padding: 1rem 0.25rem;
+    width: 100%;
+    background-color: #455d77;
+    color: white;
+    border-radius: 3px;
+    border-color: #333 #919191 #919191 #333;
+    cursor: pointer;
+    font-family: 'DogicaPixel', Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: -0.07rem;
+}
+
+.sidebar button:hover {
+    background-color: #295c59;
+    color: #a6bfda;
+    font-size: 0.95rem;
+    letter-spacing: -0.01rem;
+    border-color: #173331 #919191 #919191 #173331;
+}

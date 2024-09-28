@@ -1,0 +1,41 @@
+<!-- site_v3/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>site_v3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>
+            <span>D</span><span data-l33t="4">A</span><span>V</span><span data-l33t="1">I</span><span>N</span><span data-l33t="4">A</span> <span>R</span><span data-l33t="0">O</span><span>S</span><span data-l33t="3">E</span> <span data-l33t="4">A</span><span>L</span><span>L</span><span data-l33t="3">E</span><span>N</span>
+        </h1>              
+    </header>
+    <div class="container">
+        <div class="main-content" id="main-content">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="sidebar">
+            <button onclick="loadContent('/details')">details</button>
+            <button onclick="loadContent('/education')">education</button>
+            <button onclick="loadContent('/certification')">certification</button>
+        </div>        
+        
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        function loadContent(section) {
+            fetch(`/content/${section}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('main-content').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
